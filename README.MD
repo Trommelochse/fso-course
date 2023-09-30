@@ -1,4 +1,5 @@
 # Fullstackopen Course
 
 ## Table of Contents
-nothing to see yet...
+- [Part 0](https://github.com/Trommelochse/fso-course/tree/main/part0)
+
