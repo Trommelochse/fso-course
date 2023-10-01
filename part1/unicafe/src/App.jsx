@@ -50,7 +50,7 @@ const App = () => {
       <Button text="Good" handleClick={() => incrementCounter(good, setGood)} />
       <Button text="Neutral" handleClick={() => incrementCounter(neutral, setNeutral)} />
       <Button text="Bad" handleClick={() => incrementCounter(bad, setBad)} />
-      <Statistics good={good} neutral={neutral} bad ={bad} />
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   )
 }
