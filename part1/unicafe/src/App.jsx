@@ -42,7 +42,7 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const incrementCounter = (val,fn) =>  fn(val + 1)
+  const incrementCounter = (val, fn) =>  fn(val + 1)
 
   return (
     <div>
@@ -50,7 +50,7 @@ const App = () => {
       <Button text="Good" handleClick={() => incrementCounter(good, setGood)} />
       <Button text="Neutral" handleClick={() => incrementCounter(neutral, setNeutral)} />
       <Button text="Bad" handleClick={() => incrementCounter(bad, setBad)} />
-      <Statistics good={good} neutral= {neutral} bad = {bad} />
+      <Statistics good={good} neutral={neutral} bad ={bad} />
     </div>
   )
 }
