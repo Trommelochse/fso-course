@@ -4,12 +4,14 @@ import personsService from './services/personsService'
 import Form from './components/Form'
 import Search from './components/Search'
 import Persons from './components/Persons'
+import Notification from './components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [newSearch, setNewSearch] = useState('')
+  const [message, setMessage] = useState(null)
 
   useEffect(() => {
     personsService
@@ -31,6 +33,10 @@ const App = () => {
         personsService
           .update(id, newPerson)
           .then(person => setPersons(persons.map(p => p.id === id ? person : p)))
+          .catch(err => {
+            setMessage({type: 'error', content: err.message})
+            setTimeout(() => setMessage(null), 3500)
+          })
       }
       setNewName('')
       setNewNumber('')
@@ -63,6 +69,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={message} />
       <h3>Filter your results</h3>
       <Search handleSearchChange={handleSearchChange} newSearch={newSearch}/>
 
